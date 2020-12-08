@@ -30,7 +30,7 @@ int main(int argc, char **argv)
     // Subscribe a un topico dado, in este caso "chatter".
 	//chatterCallback: es el nombre de la callback function que va a ser ejecutada cada vez que un mensaje es recivido
 
-    ros::Subscriber sub = node.subscribe("chatter", 1000, chatterCallback);
+    ros::Subscriber sub = node.subscribe("nombre", 1000, chatterCallback);
 
     // Entra al loop, llamando   callbacks
     ros::spin();

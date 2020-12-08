@@ -15,7 +15,8 @@ from std_msgs.msg import String
 
 def chatter_callback(message):
     #get_caller_id():  Recibe el nombre del nodo local completo 
-    rospy.loginfo(rospy.get_caller_id() + "I heard %s", message.data)
+    #rospy.loginfo(rospy.get_caller_id() + "   Escucho este dato  %s", message.data)
+    print("   Hola: %s", message.data)
     
 def listener():
 
@@ -27,7 +28,7 @@ def listener():
 
     rospy.init_node('listener', anonymous=True)
 
-    rospy.Subscriber("chatter", String, chatter_callback)
+    rospy.Subscriber("nombre", String, chatter_callback)
 
     # spin() evita que python termine el programa hasta que el nodo sea detenido
     

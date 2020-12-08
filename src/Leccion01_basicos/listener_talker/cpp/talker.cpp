@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	//crea un node handle: es una referencia asignada a un nuevo nodo
 	ros::NodeHandle n;
 	//crea un publisher con un topico llamado "chatter" que enviara un mensaje tipo  String 
-	ros::Publisher chatter_publisher = n.advertise<std_msgs::String>("chatter", 1000);
+	ros::Publisher chatter_publisher = n.advertise<std_msgs::String>("nombre", 1000);
 	//Rate es una clase  que es usafa para definir la frecuencia de un loop. Aqui vamos a enviar un mensaje
     // cada 2 segundos
 	ros::Rate loop_rate(0.5); //1 message per second
@@ -37,12 +37,13 @@ int main(int argc, char **argv)
 
        //crear un string para los datos
 	   std::stringstream ss;
-	   ss << "Hello World " << count;
+	   ss << "Paul" << count;
 	   //asignar el dato al mensage , recuerda el tipo del dato es string, por ende necesita convesion
        msg.data = ss.str();
 
        //imprime el contenido en la consola, el contenido del mensaje
        ROS_INFO("[Talker] I published %s\n", msg.data.c_str());
+       
 
        //Publish (publica el mensaje)
        chatter_publisher.publish(msg);

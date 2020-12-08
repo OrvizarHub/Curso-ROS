@@ -18,7 +18,7 @@ from std_msgs.msg import String
 def talker():
     #crea un nuevo publisher. especificamos el nombre del topico,
     #el tipo de mensage y el tamano
-    pub = rospy.Publisher('chatter', String, queue_size=10)
+    pub = rospy.Publisher('nombre', String, queue_size=10)
     # Necesitamos inicializar el nodo
     # In ROS, nodes are uniquely named. If two nodes with the same
     # node are launched, the previous one is kicked off. The
@@ -26,11 +26,11 @@ def talker():
     # name for our 'talker' node 
     rospy.init_node('talker', anonymous=True)
     #setear el loop rate
-    rate = rospy.Rate(1) # 1hz
+    rate = rospy.Rate(10) # 1hz msg per second
     #mantiene al nodo publicando hasta que Ctrl-C sea presionado
     i = 0
     while not rospy.is_shutdown():
-        hello_str = "hello world %s" % i
+        hello_str = "Paul Tumbaco %s" % i
         rospy.loginfo(hello_str)
         pub.publish(hello_str)
         rate.sleep()

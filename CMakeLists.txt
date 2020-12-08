@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(Curso_ROS)
+project(curso_ros)
 
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS
@@ -39,7 +39,7 @@ find_package(catkin REQUIRED COMPONENTS
 ###################################
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES Curso_ROS
+  LIBRARIES curso_ros
   CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
  
 )
@@ -68,4 +68,9 @@ add_executable(listener_nodo src/Leccion01_basicos/listener_talker/cpp/listener.
 target_link_libraries (listener_nodo ${catkin_LIBRARIES})
 
 
-
+catkin_install_python(PROGRAMS src/Leccion01_basicos/listener_talker/scripts/talker.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+catkin_install_python(PROGRAMS src/Leccion01_basicos/listener_talker/scripts/listener.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)

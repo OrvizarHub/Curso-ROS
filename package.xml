@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>Curso_ROS</name>
+  <name>curso_ros</name>
   <version>0.0.0</version>
   <description>Package Orvizar ROS para principiantes Part I</description>
 
